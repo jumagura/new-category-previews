@@ -1,0 +1,9 @@
+{
+  "name": "Category Previews",
+  "repository": "https://github.com/jumagura/new-category-previews",
+  "about_url": "https://github.com/jumagura/new-category-previews",
+  "author": "jumagura",
+  "license_url": "https://github.com/jumagura/new-category-previews/blob/master/LICENSE",
+  "component": true,
+  "theme_version": "1.0"
+}
