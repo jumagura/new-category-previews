@@ -1,0 +1,69 @@
+---
+categories:
+  description: "Top level categories preview list"
+  default: >-
+    [
+      {
+        "icon":"bell",
+        "title":"Announcements",
+        "description":"Official Grey Arrows Drone Club Announcements.",
+        "url":"https://greyarro.ws/sorry-members-only"
+      },   
+      {
+        "icon":"star",
+        "title":"Members Only",
+        "description":"Special deals and content exclusively for GADC members.",
+        "url":"https://greyarro.ws/sorry-members-only"
+      },   
+      {
+        "icon":"comments",
+        "title":"Droning On...",
+        "description":"The off-topic place to discuss anything and everything.",
+        "url":"https://greyarro.ws/sorry-members-only"
+      }   
+    ]
+  json_schema: '
+  {
+    "title": "List of Categories",
+    "description": "Members of `special-groups` will not see the preview since they can access the category",
+    "type": "array",
+    "format": "table",
+    "uniqueItems": false,
+    "items": {
+      "type": "object",
+      "properties": {
+        "icon": {
+          "description": "Icon displayed before preview name",
+          "type": "string",
+          "minLength": 1
+        },
+        "title": {
+          "description": "The bold, hyperlinked part of the preview",
+          "type": "string",
+          "minLength": 1
+        },
+        "description": {
+          "description": "displayed under the Preview Name",
+          "type": "string",
+          "minLength": 1
+        },
+        "url": {
+          "description": "the link that will be attached to the Preview Name",
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "additionalProperties": false
+    }
+  }'
+border_color:
+  type: string
+  default: '0088CC'
+  description:
+    en: 'The hex color associated with all category previews when the <code>category style</code> site setting is not set to "none."'
+location_of_previews:
+  default: "above_categories"
+  type: enum
+  choices:
+    - above_categories
+    - below_categories
