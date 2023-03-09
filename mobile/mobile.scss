@@ -1,0 +1,23 @@
+.category-list.with-topics {
+  .category-list-item[class*="above-"] {
+    tr.category-description {
+      display: table-row;
+      border-bottom: none;
+    }
+    div.category-description {
+      display: block;
+    }
+  }
+}
+.preview-category {
+  .topic-list tbody {
+    border-top: none;
+  }
+  .topic-list {
+    tbody {
+      .category-description {
+        border-bottom: none;
+      }
+    }
+  }
+}
