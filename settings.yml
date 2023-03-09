@@ -25,7 +25,7 @@ categories:
   json_schema: '
   {
     "title": "List of Categories",
-    "description": "Members of `special-groups` will not see the preview since they can access the category",
+    "description": "The name of the category has to be the same exact name as the category to preview in order to avoid duplicates, staff and groups with access to the category will not see the preview",
     "type": "array",
     "format": "table",
     "uniqueItems": false,
@@ -38,17 +38,17 @@ categories:
           "minLength": 1
         },
         "title": {
-          "description": "The bold, hyperlinked part of the preview",
+          "description": "The bold, hyperlinked title.",
           "type": "string",
           "minLength": 1
         },
         "description": {
-          "description": "displayed under the Preview Name",
+          "description": "Displayed under the Preview Name",
           "type": "string",
           "minLength": 1
         },
         "url": {
-          "description": "the link that will be attached to the Preview Name",
+          "description": " Link attached to the Preview Name",
           "type": "string",
           "minLength": 1
         }
