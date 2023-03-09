@@ -3,7 +3,6 @@
 }
 
 .preview-main-category {
-  margin-left: 3px;
   tbody {
     @if $location-of-previews == "below_categories" {
       border-top: none;
