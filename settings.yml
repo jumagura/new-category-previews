@@ -62,7 +62,7 @@ border_color:
   description:
     en: 'The hex color associated with all category previews when the <code>category style</code> site setting is not set to "none."'
 location_of_previews:
-  default: "above_categories"
+  default: "below_categories"
   type: enum
   choices:
     - above_categories
