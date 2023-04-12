@@ -2,26 +2,6 @@
 categories:
   description: "Top level categories preview list"
   default: >-
-    [
-      {
-        "icon":"bell",
-        "title":"Announcements",
-        "description":"Official Grey Arrows Drone Club Announcements.",
-        "url":"https://greyarro.ws/sorry-members-only"
-      },   
-      {
-        "icon":"star",
-        "title":"Members Only",
-        "description":"Special deals and content exclusively for GADC members.",
-        "url":"https://greyarro.ws/sorry-members-only"
-      },   
-      {
-        "icon":"comments",
-        "title":"Droning On...",
-        "description":"The off-topic place to discuss anything and everything.",
-        "url":"https://greyarro.ws/sorry-members-only"
-      }   
-    ]
   json_schema: '
   {
     "title": "List of Categories",
