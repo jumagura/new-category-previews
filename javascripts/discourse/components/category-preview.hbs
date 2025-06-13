@@ -1,7 +1,10 @@
 {{#if preview}}
   {{#if site.mobileView}}
     {{#each preview as |p|}}
-      <div style={{border-color p.color}} class="category-list-item category {{p.className}}">
+      <div
+        style={{border-color p.color}}
+        class="category-list-item category {{p.className}}"
+      >
         <table class="topic-list">
           <tbody>
             <tr>
@@ -25,7 +28,9 @@
             </tr>
             <tr class="category-description">
               <td colspan="3">
-                <div class="category-description">{{html-safe p.description}}</div>
+                <div class="category-description">{{html-safe
+                    p.description
+                  }}</div>
               </td>
             </tr>
           </tbody>
@@ -104,7 +109,9 @@
                   {{/if}}
                 </h3>
                 {{#if p.description}}
-                  <div class="category-description">{{html-safe p.description}}</div>
+                  <div class="category-description">{{html-safe
+                      p.description
+                    }}</div>
                 {{/if}}
               </td>
             </tr>
