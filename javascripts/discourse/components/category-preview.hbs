@@ -1,7 +1,10 @@
-{{#if preview}}
-  {{#if site.mobileView}}
-    {{#each preview as |p|}}
-      <div style={{border-color p.color}} class="category-list-item category {{p.className}}">
+{{#if this.preview}}
+  {{#if this.site.mobileView}}
+    {{#each this.preview as |p|}}
+      <div
+        style={{border-color p.color}}
+        class="category-list-item category {{p.className}}"
+      >
         <table class="topic-list">
           <tbody>
             <tr>
@@ -25,19 +28,21 @@
             </tr>
             <tr class="category-description">
               <td colspan="3">
-                <div class="category-description">{{html-safe p.description}}</div>
+                <div class="category-description">{{html-safe
+                    p.description
+                  }}</div>
               </td>
             </tr>
           </tbody>
         </table>
       </div>
     {{/each}}
-  {{else if boxStyle}}
-    {{#each preview as |p|}}
+  {{else if this.boxStyle}}
+    {{#each this.preview as |p|}}
       <div
-        style={{unless noCategoryStyle (border-color p.color)}}
+        style={{unless this.noCategoryStyle (border-color p.color)}}
         class="category category-box
-          {{if noCategoryStyle 'no-category-boxes-style'}}
+          {{if this.noCategoryStyle 'no-category-boxes-style'}}
           {{p.className}}"
       >
         <div class="category-box-inner">
@@ -81,12 +86,12 @@
     <div class="category-list-item category preview-main-category">
       <table class="category-list">
         <tbody>
-          {{#each preview as |p|}}
+          {{#each this.preview as |p|}}
             <tr class="category">
               <td
                 colspan="2"
-                class="category {{if noCategoryStyle 'no-category-style'}}"
-                style={{unless noCategoryStyle (border-color p.color)}}
+                class="category {{if this.noCategoryStyle 'no-category-style'}}"
+                style={{unless this.noCategoryStyle (border-color p.color)}}
               >
                 <h3>
                   {{#if p.href}}
@@ -104,7 +109,9 @@
                   {{/if}}
                 </h3>
                 {{#if p.description}}
-                  <div class="category-description">{{html-safe p.description}}</div>
+                  <div class="category-description">{{html-safe
+                      p.description
+                    }}</div>
                 {{/if}}
               </td>
             </tr>
