@@ -1,10 +1,25 @@
 .navigation-categories .category-list {
   margin-bottom: 0;
+
+  .category-name {
+    font-size: var(--font-down-1);
+    color: var(--category-14-color) !important;
+  }
+
+  .category-text-title {
+    .d-icon {
+      width: .74em;
+      height: .74em;
+      color: var(--primary-medium);
+      padding-right: 5px;
+    }
+  }
+
 }
 
 .preview-main-category {
   tbody {
-    @if $location-of-previews == "below_categories" {
+    @if $location-of-previews =="below_categories" {
       border-top: none;
     }
   }
