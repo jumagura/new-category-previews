@@ -1,30 +1,62 @@
-import Component from "@ember/component";
-import { equal } from "@ember/object/computed";
-import discourseComputed from "discourse-common/utils/decorators";
+import Component from "@glimmer/component";
+import { inject as service } from "@ember/service";
 
-const allCategoryPreviews = settings.categories ? JSON.parse(settings.categories) : [];
+export default class CategoryPreview extends Component {
+  @service site;
+  @service siteSettings;
 
-export default Component.extend({
-  noCategoryStyle: equal("siteSettings.category_style", "none"),
-  boxStyle: equal("siteSettings.desktop_category_page_style", "categories_boxes"),
+  get noCategoryStyle() {
+    return this.siteSettings.category_style === "none";
+  }
 
-  @discourseComputed()
-  preview() {
+  get boxStyle() {
+    return this.siteSettings.desktop_category_page_style === "categories_boxes";
+  }
+
+  get preview() {
+    let allCategoryPreviews = [];
+
+    // Debug the raw settings value
+    console.log("CategoryPreview - raw settings.categories:", settings.categories);
+    console.log("CategoryPreview - typeof settings.categories:", typeof settings.categories);
+
+    if (settings.categories) {
+      try {
+        // If it's already an array, use it directly
+        if (Array.isArray(settings.categories)) {
+          allCategoryPreviews = settings.categories;
+        } else if (typeof settings.categories === "string" && settings.categories.trim()) {
+          allCategoryPreviews = JSON.parse(settings.categories);
+        }
+      } catch (e) {
+        console.error("CategoryPreview - Error parsing settings.categories:", e);
+      }
+    }
+
     const previewData = [];
-    const categorySlug = this.parentView.categories.content;
+    const categories = this.args.categories || [];
+
+    // Debug logging
+    console.log("CategoryPreview - args:", this.args);
+    console.log("CategoryPreview - categories:", categories);
+    console.log("CategoryPreview - allCategoryPreviews:", allCategoryPreviews);
+
     allCategoryPreviews.forEach((data) => {
-      const hasCategoryVisible = categorySlug.some((c) => c.name === data.title);
+      const hasCategoryVisible = categories.some((c) => c.name === data.title);
+      console.log(`CategoryPreview - checking "${data.title}", visible: ${hasCategoryVisible}`);
       if (!hasCategoryVisible) {
         previewData.push({
           icon: data.icon,
           title: data.title,
           description: data.description,
           href: data.url,
-          className: `preview-category`,
+          className: "preview-category",
           color: settings.border_color,
         });
       }
     });
+
+    console.log("CategoryPreview - previewData:", previewData);
     return previewData;
-  },
-});
+  }
+}
