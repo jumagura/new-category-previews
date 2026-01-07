@@ -1,8 +1,7 @@
 ---
 categories:
   description: "Top level categories preview list"
-  type: objects
-  default: "[]"
+  default: >-
   json_schema: '
   {
     "title": "List of Categories",
