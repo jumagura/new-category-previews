@@ -16,34 +16,29 @@ export default class CategoryPreview extends Component {
   get preview() {
     let allCategoryPreviews = [];
 
-    // Debug the raw settings value
-    console.log("CategoryPreview - raw settings.categories:", settings.categories);
-    console.log("CategoryPreview - typeof settings.categories:", typeof settings.categories);
-
     if (settings.categories) {
       try {
-        // If it's already an array, use it directly
         if (Array.isArray(settings.categories)) {
           allCategoryPreviews = settings.categories;
-        } else if (typeof settings.categories === "string" && settings.categories.trim()) {
+        } else if (
+          typeof settings.categories === "string" &&
+          settings.categories.trim()
+        ) {
           allCategoryPreviews = JSON.parse(settings.categories);
         }
       } catch (e) {
-        console.error("CategoryPreview - Error parsing settings.categories:", e);
+        console.error(
+          "CategoryPreview - Error parsing settings.categories:",
+          e,
+        );
       }
     }
 
     const previewData = [];
     const categories = this.args.categories || [];
 
-    // Debug logging
-    console.log("CategoryPreview - args:", this.args);
-    console.log("CategoryPreview - categories:", categories);
-    console.log("CategoryPreview - allCategoryPreviews:", allCategoryPreviews);
-
     allCategoryPreviews.forEach((data) => {
       const hasCategoryVisible = categories.some((c) => c.name === data.title);
-      console.log(`CategoryPreview - checking "${data.title}", visible: ${hasCategoryVisible}`);
       if (!hasCategoryVisible) {
         previewData.push({
           icon: data.icon,
@@ -56,7 +51,6 @@ export default class CategoryPreview extends Component {
       }
     });
 
-    console.log("CategoryPreview - previewData:", previewData);
     return previewData;
   }
 }
