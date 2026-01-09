@@ -72,13 +72,13 @@ export default class CategoryPreview extends Component {
                         <a class="category-title-link" href={{p.href}}>
                           <div class="category-text-title">
                             {{dIcon p.icon}}
-                            <span class="category-name">{{p.title}}</span>
+                            <span class="category-name category-name_preview">{{p.title}}</span>
                           </div>
                         </a>
                       {{else}}
                         <div class="category-text-title">
                           {{dIcon p.icon}}
-                          <span class="category-name">{{p.title}}</span>
+                          <span class="category-name category-name_preview">{{p.title}}</span>
                         </div>
                       {{/if}}
                     </h3>
@@ -156,13 +156,13 @@ export default class CategoryPreview extends Component {
                         <a class="category-title-link" href={{p.href}}>
                           <div class="category-text-title">
                             {{dIcon p.icon}}
-                            <span class="category-name">{{p.title}}</span>
+                            <span class="category-name category-name_preview">{{p.title}}</span>
                           </div>
                         </a>
                       {{else}}
                         <div class="category-text-title">
                           {{dIcon p.icon}}
-                          <span class="category-name">{{p.title}}</span>
+                          <span class="category-name category-name_preview">{{p.title}}</span>
                         </div>
                       {{/if}}
                     </h3>
