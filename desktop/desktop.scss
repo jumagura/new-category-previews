@@ -1,9 +1,9 @@
 .navigation-categories .category-list {
   margin-bottom: 0;
 
-  .category-name {
-    font-size: var(--font-up-2);
+  .category-name_preview {
     color: var(--category-14-color) !important;
+    font-size: var(--font-down-1);
   }
 
   .category-text-title {
@@ -18,7 +18,7 @@
 
 .preview-main-category {
   tbody {
-    @if $location-of-previews == "below_categories" {
+    @if $location-of-previews =="below_categories" {
       border-top: none;
     }
   }
