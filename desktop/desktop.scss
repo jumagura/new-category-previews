@@ -22,4 +22,12 @@
       border-top: none;
     }
   }
+
+  &.category-list-item {
+    padding-left: 0px;
+
+    @supports (hanging-punctuation: first) and (font: -apple-system-body) {
+      margin-left: -3px;
+    }
+  }
 }
